@@ -31,15 +31,9 @@ const questions = [
     name: "usage",
   },
   {
-    type: "checkbox",
+    type: "list",
     message: "What type of license?",
-    choices: [
-      "MIT",
-      "Creative Commons",
-      "GNU Public License",
-      "Apache",
-      "None",
-    ],
+    choices: ["MIT", "ISC", "Zlib", "Apache", "None"],
     name: "license",
   },
   {
@@ -75,7 +69,6 @@ function writeToFile(fileName, data) {
     if (err) {
       return console.log(err);
     }
-    console.log(data.title);
   });
 }
 
