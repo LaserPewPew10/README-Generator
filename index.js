@@ -35,7 +35,7 @@ const questions = [
     message: "What type of license?",
     choices: [
       "MIT",
-      "creative commons",
+      "Creative Commons",
       "GNU Public License",
       "Apache",
       "None",
@@ -50,7 +50,12 @@ const questions = [
   {
     type: "input",
     message: "How do I test this??",
-    name: "testing",
+    name: "tests",
+  },
+  {
+    type: "input",
+    message: "Would you like to ask any questions?",
+    name: "questions",
   },
   {
     type: "input",
@@ -66,18 +71,19 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data);
+  fs.writeFile(fileName, data, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log(data.title);
+  });
 }
 
 // function to initialize program
 function init() {
   inquirer.prompt(questions).then(function (response) {
     var markdownData = generateMarkdown(response);
-    writeToFile("README.md", markdownData, function (err) {
-      if (err) {
-        return console.log(err);
-      }
-    });
+    writeToFile("README.md", markdownData);
   });
 }
 
