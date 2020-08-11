@@ -1,5 +1,3 @@
-# README-Generator
-
 # Chomp-In-Ma-Belly
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Table of Contents
@@ -24,6 +22,5 @@
   ### Tests
   * Real World Testing
   #### Questions
-  * No
   * (http://github.com/LaserPewPew10)
   * ramirezbjustin@gmail.com
